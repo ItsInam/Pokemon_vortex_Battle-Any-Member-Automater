@@ -2,6 +2,10 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 driver = webdriver.Chrome()
 
@@ -12,8 +16,8 @@ time.sleep(2)
 username = driver.find_element(By.NAME,"myusername")
 password = driver.find_element(By.NAME,"mypassword")
 
-username.send_keys("its.inam")
-password.send_keys("Inam20051016@")
+username.send_keys(os.getenv("PV_USERNAME"))
+password.send_keys(os.getenv("PV_PASSWORD"))
 password.send_keys(Keys.RETURN)
 
 time.sleep(3)
