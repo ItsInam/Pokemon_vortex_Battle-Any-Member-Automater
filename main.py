@@ -32,7 +32,8 @@ battle_any_member.click()
 
 time.sleep(3)
 
-fire_trainer = driver.find_element(By.XPATH,"(//table//a)[12]")
+driver.execute_script("window.scrollBy(0, 300);")
+fire_trainer = driver.find_element(By.XPATH,"//a[@href='/battle-user/1058571']")
 fire_trainer.click()
 
 time.sleep(5)
