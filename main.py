@@ -11,7 +11,7 @@ driver = webdriver.Chrome()
 
 driver.get("https://www.pokemon-vortex.com/login")
 
-time.sleep(2)
+time.sleep(1)
 
 username = driver.find_element(By.NAME,"myusername")
 password = driver.find_element(By.NAME,"mypassword")
@@ -20,47 +20,176 @@ username.send_keys(os.getenv("PV_USERNAME"))
 password.send_keys(os.getenv("PV_PASSWORD"))
 password.send_keys(Keys.RETURN)
 
-time.sleep(3)
+time.sleep(1)
 
 battle_tab = driver.find_element(By.XPATH,"(//li[contains(@class,'main')])[2]")
 battle_tab.click()
 
-time.sleep(2)
+time.sleep(1)
 
 battle_any_member = driver.find_element(By.XPATH,"//a[contains(.,'Battle Any Member')]")
 battle_any_member.click()
 
-time.sleep(3)
+time.sleep(1)
 
 driver.execute_script("window.scrollBy(0, 300);")
 fire_trainer = driver.find_element(By.XPATH,"//a[@href='/battle-user/1058571']")
 fire_trainer.click()
 
-time.sleep(5)
+time.sleep(1)
 
+count=0
 while True:
+
     try:
-        rebattle = driver.find_element(By.XPATH,"//button[contains(.,'Rebattle')]")
+        rebattle = driver.find_element(By.XPATH,"//div[contains(@class,'menu-container')]//a[contains(@onclick,'/battle-user/1058571')]")
         rebattle.click()
+        count+=1
+        print(count + "Rounds Completed!!")
         time.sleep(2)
         continue
     except:
         pass
 
+    driver.execute_script("window.scrollBy(0, 300);")
+
     try:
-        cont = driver.find_element(By.XPATH,"//button[contains(.,'Continue')]")
-        cont.click()
+        attack = driver.find_element(By.XPATH,"//input[contains(@value,'Attack')]")
+        attack.click()
         time.sleep(1)
         continue
     except:
         pass
 
     try:
-        attack = driver.find_element(By.XPATH,"//button[contains(.,'Attack')]")
-        attack.click()
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue')]")
+        cont.click()
         time.sleep(1)
+        print("Continue 1 Found")
         continue
     except:
+        print("Not found 1")
         pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue!')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 2 Found")
+        continue
+    except:
+        print("Not found 2")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue...')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 3 Found")
+        continue
+    except:
+        print("Not found 3")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue..')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 4 Found")
+        continue
+    except:
+        print("Not found 4")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue.')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 5 Found")
+        continue
+    except:
+        print("Not found 5")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,' Continue ?')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 6 Found")
+        continue
+    except:
+        print("Not found 6")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue ...')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 7 Found")
+        continue
+    except:
+        print("Not found 7")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue ..')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 8 Found")
+        continue
+    except:
+        print("Not found 8")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,' Continue ')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 9 Found")
+        continue
+    except:
+        print("Not found 9")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,' Continue')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 10 Found")
+        continue
+    except:
+        print("Not found 10")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue?')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 11 Found")
+        continue
+    except:
+        print("Not found 11")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue ?')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 12 Found")
+        continue
+    except:
+        print("Not found 12")
+        pass
+
+    try:
+        cont = driver.find_element(By.XPATH,"//input[contains(@value,'Continue ')]")
+        cont.click()
+        time.sleep(1)
+        print("Continue 13 Found")
+        continue
+    except:
+        print("Not found 13")
+        pass
+
 
     time.sleep(0.5)
