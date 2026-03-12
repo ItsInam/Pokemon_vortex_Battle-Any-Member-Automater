@@ -19,6 +19,7 @@ password = driver.find_element(By.NAME,"mypassword")
 username.send_keys(os.getenv("PV_USERNAME"))
 password.send_keys(os.getenv("PV_PASSWORD"))
 password.send_keys(Keys.RETURN)
+print("Log in Succesfull !!!")
 
 time.sleep(1)
 
@@ -51,7 +52,7 @@ while True:
     except:
         pass
 
-    driver.execute_script("window.scrollBy(0, 300);")
+    driver.execute_script("window.scrollBy(0, 500);")
 
     try:
         attack = driver.find_element(By.XPATH,"//input[contains(@value,'Attack')]")
@@ -59,6 +60,7 @@ while True:
         time.sleep(1)
         continue
     except:
+        print("Attack Not Found")
         pass
 
     try:
@@ -68,7 +70,6 @@ while True:
         print("Continue 1 Found")
         continue
     except:
-        print("Not found 1")
         pass
 
     try:
@@ -78,7 +79,6 @@ while True:
         print("Continue 2 Found")
         continue
     except:
-        print("Not found 2")
         pass
 
     try:
@@ -88,7 +88,6 @@ while True:
         print("Continue 3 Found")
         continue
     except:
-        print("Not found 3")
         pass
 
     try:
@@ -98,7 +97,6 @@ while True:
         print("Continue 4 Found")
         continue
     except:
-        print("Not found 4")
         pass
 
     try:
@@ -108,7 +106,6 @@ while True:
         print("Continue 5 Found")
         continue
     except:
-        print("Not found 5")
         pass
 
     try:
@@ -118,7 +115,6 @@ while True:
         print("Continue 6 Found")
         continue
     except:
-        print("Not found 6")
         pass
 
     try:
@@ -128,7 +124,6 @@ while True:
         print("Continue 7 Found")
         continue
     except:
-        print("Not found 7")
         pass
 
     try:
@@ -138,7 +133,6 @@ while True:
         print("Continue 8 Found")
         continue
     except:
-        print("Not found 8")
         pass
 
     try:
@@ -148,7 +142,6 @@ while True:
         print("Continue 9 Found")
         continue
     except:
-        print("Not found 9")
         pass
 
     try:
@@ -158,7 +151,6 @@ while True:
         print("Continue 10 Found")
         continue
     except:
-        print("Not found 10")
         pass
 
     try:
@@ -168,7 +160,6 @@ while True:
         print("Continue 11 Found")
         continue
     except:
-        print("Not found 11")
         pass
 
     try:
@@ -178,7 +169,6 @@ while True:
         print("Continue 12 Found")
         continue
     except:
-        print("Not found 12")
         pass
 
     try:
@@ -188,7 +178,6 @@ while True:
         print("Continue 13 Found")
         continue
     except:
-        print("Not found 13")
         pass
 
 
